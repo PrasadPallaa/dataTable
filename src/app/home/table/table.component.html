@@ -1,0 +1,68 @@
+<!-- <div class="row mt-5 mb-5" [formGroup]="form">
+  <div class="col-3">
+    <div class="form-group">
+      <select class="form-control" (change)="changeWebsite($event)">
+        <option>Choose Website</option>
+        <option >ApplicationId
+          <input class="form-check-input" formControlName="applicationId" type="checkbox" value="" aria-label="...">
+        </option>
+      </select>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="row mt-5 mb-5">
+  <div [formGroup]="form">
+    <input class="form-check-input" formControlName="applicationId" type="checkbox" value="" aria-label="...">
+    ApplicationId
+    <input class="form-check-input" formControlName="applicant" type="checkbox" value="" aria-label="...">
+    Applicant
+    <input class="form-check-input" formControlName="SSN" type="checkbox" value="" aria-label="...">
+    SSN
+    <input class="form-check-input" formControlName="Cosigner" type="checkbox" value="" aria-label="...">
+    Cosigner
+    <input class="form-check-input" formControlName="LoanAmount" type="checkbox" value="" aria-label="...">
+    LoanAmount
+    <input class="form-check-input" formControlName="SubProgram" type="checkbox" value="" aria-label="...">
+    SubProgram
+    <input class="form-check-input" formControlName="LoanAdvisorAssigned" type="checkbox" value="" aria-label="...">
+    LoanAdvisorAssigned
+    <input class="form-check-input" formControlName="Status" type="checkbox" value="" aria-label="...">
+    Status
+    <input class="form-check-input" formControlName="SubmissionDate" type="checkbox" value="" aria-label="...">
+    SubmissionDate
+  </div>
+</div>
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th *ngIf="ApplicationId" scope="col" [appSort]="data" data-order="desc" data-name="ApplicationId">Id</th>
+      <th *ngIf="applicant" scope="col" [appSort]="data" data-order="desc" data-name="Applicant">Applicant</th>
+      <th *ngIf="SSN" scope="col" [appSort]="data" data-order="desc" data-name="SSN">SSN</th>
+      <th *ngIf="Cosigner" scope="col" [appSort]="data" data-order="desc" data-name="Cosigner">Cosigner</th>
+      <th *ngIf="LoanAmount" scope="col" [appSort]="data" data-order="desc" data-name="LoanAmount">LoanAmount</th>
+      <th *ngIf="SubProgram" scope="col" [appSort]="data" data-order="desc" data-name="SubProgram">SubProgram</th>
+      <th *ngIf="LoanAdvisorAssigned" scope="col" [appSort]="data" data-order="desc" data-name="LoanAdvisorAssigned">
+        LoanAdvisorAssigned</th>
+      <th *ngIf="Status" scope="col" [appSort]="data" data-order="desc" data-name="Status">Status</th>
+      <th *ngIf="SubmissionDate" scope="col" [appSort]="data" data-order="desc" data-name="SubmissionDate">
+        SubmissionDate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let d of data">
+      <th *ngIf="ApplicationId">{{d.ApplicationId}}</th>
+      <td *ngIf="applicant">{{d.Applicant}}</td>
+      <td *ngIf="SSN">{{d.SSN}}</td>
+      <td *ngIf="Cosigner">{{d.Cosigner}}</td>
+      <th *ngIf="LoanAmount">{{d.LoanAmount}}</th>
+      <td *ngIf="SubProgram">{{d.SubProgram}}</td>
+      <td *ngIf="LoanAdvisorAssigned">{{d.LoanAdvisorAssigned}}</td>
+      <td *ngIf="Status">{{d.Status}}</td>
+      <td *ngIf="SubmissionDate">{{d.SubmissionDate}}</td>
+    </tr>
+  </tbody>
+</table>
